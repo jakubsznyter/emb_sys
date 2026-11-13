@@ -1,0 +1,192 @@
+<ENTRY>
+{
+ "thisFile": "/home/kuba/vitis_workspace/hls_component/hls_component/hls_component.hlsrun_impl_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Oct 30 15:36:01 2026",
+ "timestampMillis": "1793370961933",
+ "buildStep": {
+  "cmdId": "6518cbd9-77c2-471c-8226-b42cf6e10522",
+  "name": "vitis-run",
+  "logFile": "/home/kuba/vitis_workspace/hls_component/hls_component/logs/hls_component.steps.log",
+  "commandLine": "/tools/2026.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --impl --config /home/kuba/vitis_workspace/hls_component/hls_config.cfg --work_dir hls_component ",
+  "args": [
+   "--mode",
+   "hls",
+   "--impl",
+   "--config",
+   "/home/kuba/vitis_workspace/hls_component/hls_config.cfg",
+   "--work_dir",
+   "hls_component"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/kuba/vitis_workspace/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Oct 30 15:36:01 2026",
+ "timestampMillis": "1793370961933",
+ "status": {
+  "cmdId": "6518cbd9-77c2-471c-8226-b42cf6e10522",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968921",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IMPL",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ds_cnn",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn.cpp",
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn_weights.h",
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn_weights_data.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968923",
+ "buildStep": {
+  "cmdId": "52b9c126-309b-4bc6-9b29-22f7d8dcfb96",
+  "name": "",
+  "logFile": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/kuba/vitis_workspace/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968923",
+ "status": {
+  "cmdId": "52b9c126-309b-4bc6-9b29-22f7d8dcfb96",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968927",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/vhdl",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968927",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/report/vhdl/export_syn.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968928",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/report/vhdl/export_syn.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_RTL_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968928",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/vhdl",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968928",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/report/vhdl/export_impl.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Oct 30 15:36:08 2026",
+ "timestampMillis": "1793370968929",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/impl/report/vhdl/export_impl.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_PLACE_AND_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

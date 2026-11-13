@@ -1,0 +1,38 @@
+# ================= Vivado: generated (rebuilt by Vivado) =================
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.*
+
+# ================= Vitis 2026.1: generated / machine-specific =================
+**/_ide/logs/
+**/_ide/.wsdata/
+**/_ide/workspace_journal*.py
+**/_ide/.peers.ini
+.analyzer_session.json
+.rigel_lopper/
+**/compile_commands.json
+**/build/
+**/export/
+**/logs/
+.cache/
+*.o
+*.d
+*.a
+
+# HLS: keep only the packaged IP (Vivado needs it), drop csim/syn/impl output
+**/hls/*
+!**/hls/impl/
+**/hls/impl/*
+!**/hls/impl/ip/
+
+# ================= Python =================
+__pycache__/
+*.pyc

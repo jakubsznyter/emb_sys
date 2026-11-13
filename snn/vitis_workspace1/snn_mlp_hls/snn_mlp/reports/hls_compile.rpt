@@ -1,0 +1,498 @@
+
+
+================================================================
+== Synthesis Summary Report of 'snn_mlp'
+================================================================
++ General Information: 
+    * Date:           Tue Nov  3 17:18:58 2026
+    * Version:        2026.1 (Build 6493734 on Jun 16 2026)
+    * Project:        snn_mlp
+    * Solution:       hls
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
+* Performance & Resource Estimates: 
++------------------------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+---------+-----------+------------+-----+
+|                        Modules                       | Issue|               | Iteration|         | Trip |          |       Latency       |      |         |         |           |            |     |
+|                        & Loops                       | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|    (ns)   | Slack|  BRAM   |   DSP   |     FF    |     LUT    | URAM|
++------------------------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+---------+-----------+------------+-----+
+|+ snn_mlp                                             |     -|              -|         -|    15589|     -|        no|    15588|  1.559e+05|  0.00|  23 (8%)|   8 (3%)|  3773 (3%)|  8713 (16%)|    -|
+| + read_features_from_bram                            |     -|              -|         -|      396|     -|        no|      396|  3.960e+03|  0.00|        -|        -|  123 (~0%)|   277 (~0%)|    -|
+|  + read_features_from_bram_Pipeline_VITIS_LOOP_59_1  |     -|              -|         -|      387|     -|       yes|      387|  3.870e+03|  0.00|        -|        -|   49 (~0%)|    77 (~0%)|    -|
+|   o VITIS_LOOP_59_1                                  |     -|              -|         3|        1|   384|       yes|      385|  3.850e+03|  7.30|        -|        -|          -|           -|    -|
+| + snn_core                                           |     -|              -|         -|    15184|     -|        no|    15184|  1.518e+05|  0.17|  20 (7%)|   8 (3%)|  2511 (2%)|  7259 (13%)|    -|
+|  + snn_core_Pipeline_VITIS_LOOP_225_1                |     -|              -|         -|       66|     -|       yes|       66|    660.000|  1.52|        -|        -|    9 (~0%)|    56 (~0%)|    -|
+|   o VITIS_LOOP_225_1                                 |     -|              -|         1|        1|    64|       yes|       64|    640.000|  7.30|        -|        -|          -|           -|    -|
+|  + snn_core_Pipeline_VITIS_LOOP_231_2                |     -|              -|         -|       34|     -|       yes|       34|    340.000|  1.56|        -|        -|    8 (~0%)|    55 (~0%)|    -|
+|   o VITIS_LOOP_231_2                                 |     -|              -|         1|        1|    32|       yes|       32|    320.000|  7.30|        -|        -|          -|           -|    -|
+|  + fc1_lif                                           |     -|              -|         -|    12721|     -|        no|    12721|  1.272e+05|  0.17|  16 (5%)|   8 (3%)|  1084 (1%)|   2604 (4%)|    -|
+|   o VITIS_LOOP_87_1                                  |     -|              -|       795|        -|    16|        no|    12720|  1.272e+05|  7.30|        -|        -|          -|           -|    -|
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_2                |     -|              -|         -|      196|     -|       yes|      196|  1.960e+03|  0.56|   4 (1%)|  2 (~0%)|  136 (~0%)|   273 (~0%)|    -|
+|     o VITIS_LOOP_92_2                                |     -|              -|         4|        1|   192|       yes|      194|  1.940e+03|  7.30|        -|        -|          -|           -|    -|
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_27               |     -|              -|         -|      196|     -|       yes|      196|  1.960e+03|  0.56|   4 (1%)|  2 (~0%)|  136 (~0%)|   273 (~0%)|    -|
+|     o VITIS_LOOP_92_2                                |     -|              -|         4|        1|   192|       yes|      194|  1.940e+03|  7.30|        -|        -|          -|           -|    -|
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_28               |     -|              -|         -|      196|     -|       yes|      196|  1.960e+03|  0.56|   4 (1%)|  2 (~0%)|  136 (~0%)|   273 (~0%)|    -|
+|     o VITIS_LOOP_92_2                                |     -|              -|         4|        1|   192|       yes|      194|  1.940e+03|  7.30|        -|        -|          -|           -|    -|
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_29               |     -|              -|         -|      196|     -|       yes|      196|  1.960e+03|  0.54|   4 (1%)|  2 (~0%)|  134 (~0%)|   273 (~0%)|    -|
+|     o VITIS_LOOP_92_2                                |     -|              -|         4|        1|   192|       yes|      194|  1.940e+03|  7.30|        -|        -|          -|           -|    -|
+|  + fc2_lif                                           |     -|              -|         -|     2241|     -|        no|     2241|  2.241e+04|  0.17|   4 (1%)|        -|  754 (~0%)|   2320 (4%)|    -|
+|   o VITIS_LOOP_125_1                                 |     -|              -|       280|        -|     8|        no|     2240|  2.240e+04|  7.30|        -|        -|          -|           -|    -|
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_2               |     -|              -|         -|       67|     -|       yes|       67|    670.000|  0.63|  1 (~0%)|        -|   56 (~0%)|   181 (~0%)|    -|
+|     o VITIS_LOOP_130_2                               |     -|              -|         3|        1|    64|       yes|       65|    650.000|  7.30|        -|        -|          -|           -|    -|
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_24              |     -|              -|         -|       67|     -|       yes|       67|    670.000|  0.63|  1 (~0%)|        -|   56 (~0%)|   181 (~0%)|    -|
+|     o VITIS_LOOP_130_2                               |     -|              -|         3|        1|    64|       yes|       65|    650.000|  7.30|        -|        -|          -|           -|    -|
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_25              |     -|              -|         -|       67|     -|       yes|       67|    670.000|  0.63|  1 (~0%)|        -|   55 (~0%)|   181 (~0%)|    -|
+|     o VITIS_LOOP_130_2                               |     -|              -|         3|        1|    64|       yes|       65|    650.000|  7.30|        -|        -|          -|           -|    -|
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_26              |     -|              -|         -|       67|     -|       yes|       67|    670.000|  0.63|  1 (~0%)|        -|   56 (~0%)|   181 (~0%)|    -|
+|     o VITIS_LOOP_130_2                               |     -|              -|         3|        1|    64|       yes|       65|    650.000|  7.30|        -|        -|          -|           -|    -|
+|  + fc3_lif                                           |     -|              -|         -|      148|     -|        no|      148|  1.480e+03|  0.84|        -|        -|  249 (~0%)|    933 (1%)|    -|
+|   + fc3_lif_Pipeline_VITIS_LOOP_162_2                |     -|              -|         -|       35|     -|       yes|       35|    350.000|  0.84|        -|        -|   59 (~0%)|   170 (~0%)|    -|
+|    o VITIS_LOOP_162_2                                |     -|              -|         3|        1|    32|       yes|       33|    330.000|  7.30|        -|        -|          -|           -|    -|
+|   + fc3_lif_Pipeline_VITIS_LOOP_162_21               |     -|              -|         -|       35|     -|       yes|       35|    350.000|  0.84|        -|        -|   59 (~0%)|   170 (~0%)|    -|
+|    o VITIS_LOOP_162_2                                |     -|              -|         3|        1|    32|       yes|       33|    330.000|  7.30|        -|        -|          -|           -|    -|
+|   + fc3_lif_Pipeline_VITIS_LOOP_162_22               |     -|              -|         -|       35|     -|       yes|       35|    350.000|  0.84|        -|        -|   59 (~0%)|   170 (~0%)|    -|
+|    o VITIS_LOOP_162_2                                |     -|              -|         3|        1|    32|       yes|       33|    330.000|  7.30|        -|        -|          -|           -|    -|
+|   + fc3_lif_Pipeline_VITIS_LOOP_162_23               |     -|              -|         -|       35|     -|       yes|       35|    350.000|  0.84|        -|        -|   59 (~0%)|   170 (~0%)|    -|
+|    o VITIS_LOOP_162_2                                |     -|              -|         3|        1|    32|       yes|       33|    330.000|  7.30|        -|        -|          -|           -|    -|
++------------------------------------------------------+------+---------------+----------+---------+------+----------+---------+-----------+------+---------+---------+-----------+------------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_ONLY  | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register        | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL            | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER            | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER          | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR          | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | feature_mem_1   | 0x10   | 32    | W      | Data signal of feature_mem       |                                                                      |
+| s_axi_CTRL | feature_mem_2   | 0x14   | 32    | W      | Data signal of feature_mem       |                                                                      |
+| s_axi_CTRL | prediction      | 0x1c   | 32    | R      | Data signal of prediction        |                                                                      |
+| s_axi_CTRL | prediction_ctrl | 0x20   | 32    | R      | Control signal of prediction     | 0=prediction_ap_vld                                                  |
++------------+-----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+----------+
+| Argument    | Direction | Datatype |
++-------------+-----------+----------+
+| feature_mem | in        | pointer  |
+| prediction  | out       | pointer  |
+| logits_out  | out       | pointer  |
++-------------+-----------+----------+
+
+* SW-to-HW Mapping
++-------------+--------------+-----------+----------+-------------------------------------------+
+| Argument    | HW Interface | HW Type   | HW Usage | HW Info                                   |
++-------------+--------------+-----------+----------+-------------------------------------------+
+| feature_mem | m_axi_gmem   | interface |          | channel=0                                 |
+| feature_mem | s_axi_CTRL   | register  | offset   | name=feature_mem_1 offset=0x10 range=32   |
+| feature_mem | s_axi_CTRL   | register  | offset   | name=feature_mem_2 offset=0x14 range=32   |
+| prediction  | s_axi_CTRL   | register  |          | name=prediction offset=0x1c range=32      |
+| prediction  | s_axi_CTRL   | register  |          | name=prediction_ctrl offset=0x20 range=32 |
+| logits_out  | s_axi_CTRL   | memory    |          | name=logits_out offset=48 range=16        |
++-------------+--------------+-----------+----------+-------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-----------------+------------------------------------------+
+| HW Interface | Direction | Length | Width | Loop            | Loop Location                            |
++--------------+-----------+--------+-------+-----------------+------------------------------------------+
+| m_axi_gmem   | read      | 384    | 16    | VITIS_LOOP_59_1 | SNN_guest_lecture/code/snn_mlp.cpp:59:22 |
++--------------+-----------+--------+-------+-----------------+------------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+-------------+------------------------------------------+-----------+--------------+--------+-----------------+------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable    | Access Location                          | Direction | Burst Status | Length | Loop            | Loop Location                            | Resolution | Problem                                                                                               |
++--------------+-------------+------------------------------------------+-----------+--------------+--------+-----------------+------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | feature_mem | SNN_guest_lecture/code/snn_mlp.cpp:65:24 | read      | Widen Fail   |        | VITIS_LOOP_59_1 | SNN_guest_lecture/code/snn_mlp.cpp:59:22 | 214-353    | Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | feature_mem | SNN_guest_lecture/code/snn_mlp.cpp:65:24 | read      | Inferred     | 384    | VITIS_LOOP_59_1 | SNN_guest_lecture/code/snn_mlp.cpp:59:22 |            |                                                                                                       |
++--------------+-------------+------------------------------------------+-----------+--------------+--------+-----------------+------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------+-----+--------+------------------+-----------+--------------------------+---------+
+| Name                                                 | DSP | Pragma | Variable         | Op        | Impl                     | Latency |
++------------------------------------------------------+-----+--------+------------------+-----------+--------------------------+---------+
+| + snn_mlp                                            | 8   |        |                  |           |                          |         |
+|  + read_features_from_bram                           | 0   |        |                  |           |                          |         |
+|   + read_features_from_bram_Pipeline_VITIS_LOOP_59_1 | 0   |        |                  |           |                          |         |
+|     icmp_ln59_fu_104_p2                              |     |        | icmp_ln59        | seteq     | auto                     | 0       |
+|     add_ln59_fu_110_p2                               |     |        | add_ln59         | add       | fabric                   | 0       |
+|  + snn_core                                          | 8   |        |                  |           |                          |         |
+|    best_fu_284_p2                                    |     |        | best             | setgt     | auto                     | 0       |
+|    best_val_2_fu_290_p3                              |     |        | best_val_2       | select    | auto_sel                 | 0       |
+|    icmp_ln186_fu_298_p2                              |     |        | icmp_ln186       | setgt     | auto                     | 0       |
+|    best_val_4_fu_303_p3                              |     |        | best_val_4       | select    | auto_sel                 | 0       |
+|    icmp_ln186_1_fu_310_p2                            |     |        | icmp_ln186_1     | setgt     | auto                     | 0       |
+|    select_ln186_fu_315_p3                            |     |        | select_ln186     | select    | auto_sel                 | 0       |
+|    or_ln186_fu_323_p2                                |     |        | or_ln186         | or        | auto                     | 0       |
+|    best_1_fu_329_p3                                  |     |        | best_1           | select    | auto_sel                 | 0       |
+|   + snn_core_Pipeline_VITIS_LOOP_225_1               | 0   |        |                  |           |                          |         |
+|     icmp_ln225_fu_180_p2                             |     |        | icmp_ln225       | seteq     | auto                     | 0       |
+|     add_ln225_fu_186_p2                              |     |        | add_ln225        | add       | fabric                   | 0       |
+|   + snn_core_Pipeline_VITIS_LOOP_231_2               | 0   |        |                  |           |                          |         |
+|     icmp_ln231_fu_180_p2                             |     |        | icmp_ln231       | seteq     | auto                     | 0       |
+|     add_ln231_fu_186_p2                              |     |        | add_ln231        | add       | fabric                   | 0       |
+|   + fc1_lif                                          | 8   |        |                  |           |                          |         |
+|     sub_ln96_fu_408_p2                               |     |        | sub_ln96         | sub       | fabric                   | 0       |
+|     previous_spike_fu_444_p2                         |     |        | previous_spike   | setgt     | auto                     | 0       |
+|     sub_ln40_fu_435_p2                               |     |        | sub_ln40         | sub       | fabric                   | 0       |
+|     add_ln40_fu_484_p2                               |     |        | add_ln40         | add       | fabric                   | 0       |
+|     add_ln43_fu_490_p2                               |     |        | add_ln43         | add       | fabric                   | 0       |
+|     select_ln42_fu_495_p3                            |     |        | select_ln42      | select    | auto_sel                 | 0       |
+|     icmp_ln47_fu_502_p2                              |     |        | icmp_ln47        | setgt     | auto                     | 0       |
+|     previous_spike_4_fu_537_p2                       |     |        | previous_spike_4 | setgt     | auto                     | 0       |
+|     sub_ln40_9_fu_528_p2                             |     |        | sub_ln40_9       | sub       | fabric                   | 0       |
+|     add_ln40_4_fu_577_p2                             |     |        | add_ln40_4       | add       | fabric                   | 0       |
+|     add_ln43_4_fu_583_p2                             |     |        | add_ln43_4       | add       | fabric                   | 0       |
+|     select_ln42_4_fu_588_p3                          |     |        | select_ln42_4    | select    | auto_sel                 | 0       |
+|     icmp_ln47_4_fu_595_p2                            |     |        | icmp_ln47_4      | setgt     | auto                     | 0       |
+|     previous_spike_5_fu_630_p2                       |     |        | previous_spike_5 | setgt     | auto                     | 0       |
+|     sub_ln40_11_fu_621_p2                            |     |        | sub_ln40_11      | sub       | fabric                   | 0       |
+|     add_ln40_5_fu_670_p2                             |     |        | add_ln40_5       | add       | fabric                   | 0       |
+|     add_ln43_5_fu_702_p2                             |     |        | add_ln43_5       | add       | fabric                   | 0       |
+|     select_ln42_5_fu_707_p3                          |     |        | select_ln42_5    | select    | auto_sel                 | 0       |
+|     icmp_ln47_5_fu_714_p2                            |     |        | icmp_ln47_5      | setgt     | auto                     | 0       |
+|     previous_spike_6_fu_720_p2                       |     |        | previous_spike_6 | setgt     | auto                     | 0       |
+|     sub_ln40_13_fu_696_p2                            |     |        | sub_ln40_13      | sub       | fabric                   | 0       |
+|     add_ln40_6_fu_763_p2                             |     |        | add_ln40_6       | add       | fabric                   | 0       |
+|     add_ln43_6_fu_768_p2                             |     |        | add_ln43_6       | add       | fabric                   | 0       |
+|     select_ln42_6_fu_774_p3                          |     |        | select_ln42_6    | select    | auto_sel                 | 0       |
+|     icmp_ln47_6_fu_781_p2                            |     |        | icmp_ln47_6      | setgt     | auto                     | 0       |
+|     add_ln87_fu_379_p2                               |     |        | add_ln87         | add       | fabric                   | 0       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_2                | 2   |        |                  |           |                          |         |
+|      icmp_ln92_fu_165_p2                             |     |        | icmp_ln92        | setlt     | auto                     | 0       |
+|      add_ln96_fu_190_p2                              |     |        | add_ln96         | add       | fabric                   | 0       |
+|      icmp_ln95_fu_226_p2                             |     |        | icmp_ln95        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U23                           | 1   |        | mul_ln96         | mul       | auto                     | 0       |
+|      empty_fu_288_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      icmp_ln99_fu_232_p2                             |     |        | icmp_ln99        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U24                           | 1   |        | mul_ln100        | mul       | auto                     | 0       |
+|      empty_40_fu_298_p3                              |     |        | empty_40         | select    | auto_sel                 | 0       |
+|      add_ln92_fu_215_p2                              |     |        | add_ln92         | add       | fabric                   | 0       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_27               | 2   |        |                  |           |                          |         |
+|      icmp_ln92_fu_165_p2                             |     |        | icmp_ln92        | setlt     | auto                     | 0       |
+|      add_ln96_2_fu_190_p2                            |     |        | add_ln96_2       | add       | fabric                   | 0       |
+|      icmp_ln95_fu_226_p2                             |     |        | icmp_ln95        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U32                           | 1   |        | mul_ln96         | mul       | auto                     | 0       |
+|      empty_fu_288_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      icmp_ln99_fu_232_p2                             |     |        | icmp_ln99        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U33                           | 1   |        | mul_ln100        | mul       | auto                     | 0       |
+|      empty_39_fu_298_p3                              |     |        | empty_39         | select    | auto_sel                 | 0       |
+|      add_ln92_fu_215_p2                              |     |        | add_ln92         | add       | fabric                   | 0       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_28               | 2   |        |                  |           |                          |         |
+|      icmp_ln92_fu_165_p2                             |     |        | icmp_ln92        | setlt     | auto                     | 0       |
+|      add_ln96_fu_190_p2                              |     |        | add_ln96         | add       | fabric                   | 0       |
+|      icmp_ln95_fu_226_p2                             |     |        | icmp_ln95        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U40                           | 1   |        | mul_ln96         | mul       | auto                     | 0       |
+|      empty_fu_288_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      icmp_ln99_fu_232_p2                             |     |        | icmp_ln99        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U41                           | 1   |        | mul_ln100        | mul       | auto                     | 0       |
+|      empty_38_fu_298_p3                              |     |        | empty_38         | select    | auto_sel                 | 0       |
+|      add_ln92_fu_215_p2                              |     |        | add_ln92         | add       | fabric                   | 0       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_29               | 2   |        |                  |           |                          |         |
+|      icmp_ln92_fu_169_p2                             |     |        | icmp_ln92        | setlt     | auto                     | 0       |
+|      add_ln96_fu_194_p2                              |     |        | add_ln96         | add       | fabric                   | 0       |
+|      icmp_ln95_fu_230_p2                             |     |        | icmp_ln95        | seteq     | auto                     | 0       |
+|      mul_8s_16s_24_1_1_U48                           | 1   |        | mul_ln96         | mul       | auto                     | 0       |
+|      empty_fu_292_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      icmp_ln99_fu_236_p2                             |     |        | icmp_ln99        | seteq     | auto                     | 0       |
+|      mul_7s_16s_23_1_1_U49                           | 1   |        | mul_ln100        | mul       | auto                     | 0       |
+|      empty_37_fu_302_p3                              |     |        | empty_37         | select    | auto_sel                 | 0       |
+|      add_ln92_fu_219_p2                              |     |        | add_ln92         | add       | fabric                   | 0       |
+|   + fc2_lif                                          | 0   |        |                  |           |                          |         |
+|     previous_spike_fu_423_p2                         |     |        | previous_spike   | setgt     | auto                     | 0       |
+|     sub_ln40_fu_414_p2                               |     |        | sub_ln40         | sub       | fabric                   | 0       |
+|     add_ln40_fu_463_p2                               |     |        | add_ln40         | add       | fabric                   | 0       |
+|     add_ln43_fu_469_p2                               |     |        | add_ln43         | add       | fabric                   | 0       |
+|     select_ln42_fu_474_p3                            |     |        | select_ln42      | select    | auto_sel                 | 0       |
+|     icmp_ln47_fu_481_p2                              |     |        | icmp_ln47        | setgt     | auto                     | 0       |
+|     previous_spike_1_fu_516_p2                       |     |        | previous_spike_1 | setgt     | auto                     | 0       |
+|     sub_ln40_2_fu_507_p2                             |     |        | sub_ln40_2       | sub       | fabric                   | 0       |
+|     add_ln40_1_fu_556_p2                             |     |        | add_ln40_1       | add       | fabric                   | 0       |
+|     add_ln43_1_fu_562_p2                             |     |        | add_ln43_1       | add       | fabric                   | 0       |
+|     select_ln42_1_fu_567_p3                          |     |        | select_ln42_1    | select    | auto_sel                 | 0       |
+|     icmp_ln47_1_fu_574_p2                            |     |        | icmp_ln47_1      | setgt     | auto                     | 0       |
+|     previous_spike_2_fu_609_p2                       |     |        | previous_spike_2 | setgt     | auto                     | 0       |
+|     sub_ln40_4_fu_600_p2                             |     |        | sub_ln40_4       | sub       | fabric                   | 0       |
+|     add_ln40_2_fu_649_p2                             |     |        | add_ln40_2       | add       | fabric                   | 0       |
+|     add_ln43_2_fu_681_p2                             |     |        | add_ln43_2       | add       | fabric                   | 0       |
+|     select_ln42_2_fu_686_p3                          |     |        | select_ln42_2    | select    | auto_sel                 | 0       |
+|     icmp_ln47_2_fu_693_p2                            |     |        | icmp_ln47_2      | setgt     | auto                     | 0       |
+|     previous_spike_3_fu_699_p2                       |     |        | previous_spike_3 | setgt     | auto                     | 0       |
+|     sub_ln40_6_fu_675_p2                             |     |        | sub_ln40_6       | sub       | fabric                   | 0       |
+|     add_ln40_3_fu_742_p2                             |     |        | add_ln40_3       | add       | fabric                   | 0       |
+|     add_ln43_3_fu_747_p2                             |     |        | add_ln43_3       | add       | fabric                   | 0       |
+|     select_ln42_3_fu_753_p3                          |     |        | select_ln42_3    | select    | auto_sel                 | 0       |
+|     icmp_ln47_3_fu_760_p2                            |     |        | icmp_ln47_3      | setgt     | auto                     | 0       |
+|     add_ln125_fu_375_p2                              |     |        | add_ln125        | add       | fabric                   | 0       |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_2               | 0   |        |                  |           |                          |         |
+|      icmp_ln130_fu_175_p2                            |     |        | icmp_ln130       | seteq     | auto                     | 0       |
+|      add_ln130_fu_181_p2                             |     |        | add_ln130        | add       | fabric                   | 0       |
+|      add_ln134_fu_191_p2                             |     |        | add_ln134        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U70                         |     |        | tmp              | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_258_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_fu_265_p2                                   |     |        | acc              | add       | fabric                   | 0       |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_24              | 0   |        |                  |           |                          |         |
+|      icmp_ln130_fu_175_p2                            |     |        | icmp_ln130       | seteq     | auto                     | 0       |
+|      add_ln130_fu_181_p2                             |     |        | add_ln130        | add       | fabric                   | 0       |
+|      add_ln134_2_fu_191_p2                           |     |        | add_ln134_2      | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U80                         |     |        | tmp_4            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_258_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_11_fu_265_p2                                |     |        | acc_11           | add       | fabric                   | 0       |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_25              | 0   |        |                  |           |                          |         |
+|      icmp_ln130_fu_175_p2                            |     |        | icmp_ln130       | seteq     | auto                     | 0       |
+|      add_ln130_fu_181_p2                             |     |        | add_ln130        | add       | fabric                   | 0       |
+|      add_ln134_fu_191_p2                             |     |        | add_ln134        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U89                         |     |        | tmp_5            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_258_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_9_fu_265_p2                                 |     |        | acc_9            | add       | fabric                   | 0       |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_26              | 0   |        |                  |           |                          |         |
+|      icmp_ln130_fu_175_p2                            |     |        | icmp_ln130       | seteq     | auto                     | 0       |
+|      add_ln130_fu_181_p2                             |     |        | add_ln130        | add       | fabric                   | 0       |
+|      add_ln134_fu_191_p2                             |     |        | add_ln134        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U98                         |     |        | tmp_6            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_258_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_7_fu_265_p2                                 |     |        | acc_7            | add       | fabric                   | 0       |
+|   + fc3_lif                                          | 0   |        |                  |           |                          |         |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_2               | 0   |        |                  |           |                          |         |
+|      icmp_ln162_fu_153_p2                            |     |        | icmp_ln162       | seteq     | auto                     | 0       |
+|      add_ln162_fu_159_p2                             |     |        | add_ln162        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U123                        |     |        | tmp              | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_226_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_5_fu_233_p2                                 |     |        | acc_5            | add       | fabric                   | 0       |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_21              | 0   |        |                  |           |                          |         |
+|      icmp_ln162_fu_153_p2                            |     |        | icmp_ln162       | seteq     | auto                     | 0       |
+|      add_ln162_fu_159_p2                             |     |        | add_ln162        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U130                        |     |        | tmp_1            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_226_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_fu_233_p2                                   |     |        | acc              | add       | fabric                   | 0       |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_22              | 0   |        |                  |           |                          |         |
+|      icmp_ln162_fu_153_p2                            |     |        | icmp_ln162       | seteq     | auto                     | 0       |
+|      add_ln162_fu_159_p2                             |     |        | add_ln162        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U137                        |     |        | tmp_2            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_226_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_4_fu_233_p2                                 |     |        | acc_4            | add       | fabric                   | 0       |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_23              | 0   |        |                  |           |                          |         |
+|      icmp_ln162_fu_153_p2                            |     |        | icmp_ln162       | seteq     | auto                     | 0       |
+|      add_ln162_fu_159_p2                             |     |        | add_ln162        | add       | fabric                   | 0       |
+|      sparsemux_9_2_1_1_1_U144                        |     |        | tmp_3            | sparsemux | compactencoding_dontcare | 0       |
+|      empty_fu_226_p3                                 |     |        | empty            | select    | auto_sel                 | 0       |
+|      acc_2_fu_233_p2                                 |     |        | acc_2            | add       | fabric                   | 0       |
++------------------------------------------------------+-----+--------+------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-----------------------------------------+--------------+-----------+------+------+--------+--------+----------------+------+---------+------------------+
+| Name                                    | Usage        | Type      | BRAM | URAM | CE_REG | Pragma | Variable       | Impl | Latency | Bitwidth, Depth, |
+|                                         |              |           |      |      |        |        |                |      |         | Banks            |
++-----------------------------------------+--------------+-----------+------+------+--------+--------+----------------+------+---------+------------------+
+| + snn_mlp                               |              |           | 23   | 0    |        |        |                |      |         |                  |
+|   CTRL_s_axi_U                          | interface    | s_axilite |      |      |        |        |                |      |         |                  |
+|   gmem_m_axi_U                          | interface    | m_axi     | 2    |      |        |        |                |      |         |                  |
+|   features_U                            | ram_2p array |           | 1    |      | N      | yes    | features       | bram | 1       | 16, 384, 1       |
+|  + snn_core                             |              |           | 20   | 0    |        |        |                |      |         |                  |
+|    mem1_U                               | ram_1p array |           |      |      | N      |        | mem1           | auto | 1       | 32, 16, 1        |
+|    mem1_1_U                             | ram_1p array |           |      |      | N      |        | mem1_1         | auto | 1       | 32, 16, 1        |
+|    mem1_2_U                             | ram_1p array |           |      |      | N      |        | mem1_2         | auto | 1       | 32, 16, 1        |
+|    mem1_3_U                             | ram_1p array |           |      |      | N      |        | mem1_3         | auto | 1       | 32, 16, 1        |
+|    mem2_U                               | ram_1p array |           |      |      | N      |        | mem2           | auto | 1       | 32, 8, 1         |
+|    mem2_1_U                             | ram_1p array |           |      |      | N      |        | mem2_1         | auto | 1       | 32, 8, 1         |
+|    mem2_2_U                             | ram_1p array |           |      |      | N      |        | mem2_2         | auto | 1       | 32, 8, 1         |
+|    mem2_3_U                             | ram_1p array |           |      |      | N      |        | mem2_3         | auto | 1       | 32, 8, 1         |
+|    spk1_U                               | ram_1p array |           |      |      | N      |        | spk1           | auto | 1       | 1, 16, 1         |
+|    spk1_1_U                             | ram_1p array |           |      |      | N      |        | spk1_1         | auto | 1       | 1, 16, 1         |
+|    spk1_2_U                             | ram_1p array |           |      |      | N      |        | spk1_2         | auto | 1       | 1, 16, 1         |
+|    spk1_3_U                             | ram_1p array |           |      |      | N      |        | spk1_3         | auto | 1       | 1, 16, 1         |
+|    spk2_U                               | ram_1p array |           |      |      | N      |        | spk2           | auto | 1       | 1, 8, 1          |
+|    spk2_1_U                             | ram_1p array |           |      |      | N      |        | spk2_1         | auto | 1       | 1, 8, 1          |
+|    spk2_2_U                             | ram_1p array |           |      |      | N      |        | spk2_2         | auto | 1       | 1, 8, 1          |
+|    spk2_3_U                             | ram_1p array |           |      |      | N      |        | spk2_3         | auto | 1       | 1, 8, 1          |
+|   + fc1_lif                             |              |           | 16   | 0    |        |        |                |      |         |                  |
+|     p_ZL5fc1_b_0_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc1_b_0   | auto | 1       | 7, 16, 1         |
+|     p_ZL5fc1_b_1_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc1_b_1   | auto | 1       | 6, 16, 1         |
+|     p_ZL5fc1_b_2_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc1_b_2   | auto | 1       | 7, 16, 1         |
+|     p_ZL5fc1_b_3_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc1_b_3   | auto | 1       | 7, 16, 1         |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_2   |              |           | 4    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc1_w_0_0_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_0_0 | auto | 1       | 8, 3072, 1       |
+|      p_ZL5fc1_w_0_1_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_0_1 | auto | 1       | 8, 3072, 1       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_27  |              |           | 4    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc1_w_1_0_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_1_0 | auto | 1       | 8, 3072, 1       |
+|      p_ZL5fc1_w_1_1_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_1_1 | auto | 1       | 8, 3072, 1       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_28  |              |           | 4    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc1_w_2_0_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_2_0 | auto | 1       | 8, 3072, 1       |
+|      p_ZL5fc1_w_2_1_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_2_1 | auto | 1       | 8, 3072, 1       |
+|    + fc1_lif_Pipeline_VITIS_LOOP_92_29  |              |           | 4    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc1_w_3_0_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_3_0 | auto | 1       | 8, 3072, 1       |
+|      p_ZL5fc1_w_3_1_U                   | rom_1p       |           | 2    |      | N      |        | p_ZL5fc1_w_3_1 | auto | 1       | 7, 3072, 1       |
+|   + fc2_lif                             |              |           | 4    | 0    |        |        |                |      |         |                  |
+|     p_ZL5fc2_b_0_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc2_b_0   | auto | 1       | 6, 8, 1          |
+|     p_ZL5fc2_b_1_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc2_b_1   | auto | 1       | 6, 8, 1          |
+|     p_ZL5fc2_b_2_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc2_b_2   | auto | 1       | 7, 8, 1          |
+|     p_ZL5fc2_b_3_U                      | rom_1p       |           |      |      | N      |        | p_ZL5fc2_b_3   | auto | 1       | 7, 8, 1          |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_2  |              |           | 1    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc2_w_0_U                     | rom_1p       |           | 1    |      | N      |        | p_ZL5fc2_w_0   | auto | 1       | 8, 512, 1        |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_24 |              |           | 1    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc2_w_1_U                     | rom_1p       |           | 1    |      | N      |        | p_ZL5fc2_w_1   | auto | 1       | 8, 512, 1        |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_25 |              |           | 1    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc2_w_2_U                     | rom_1p       |           | 1    |      | N      |        | p_ZL5fc2_w_2   | auto | 1       | 7, 512, 1        |
+|    + fc2_lif_Pipeline_VITIS_LOOP_130_26 |              |           | 1    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc2_w_3_U                     | rom_1p       |           | 1    |      | N      |        | p_ZL5fc2_w_3   | auto | 1       | 8, 512, 1        |
+|   + fc3_lif                             |              |           | 0    | 0    |        |        |                |      |         |                  |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_2  |              |           | 0    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc3_w_0_U                     | rom_1p       |           |      |      | N      |        | p_ZL5fc3_w_0   | auto | 1       | 8, 32, 1         |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_21 |              |           | 0    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc3_w_1_U                     | rom_1p       |           |      |      | N      |        | p_ZL5fc3_w_1   | auto | 1       | 8, 32, 1         |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_22 |              |           | 0    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc3_w_2_U                     | rom_1p       |           |      |      | N      |        | p_ZL5fc3_w_2   | auto | 1       | 8, 32, 1         |
+|    + fc3_lif_Pipeline_VITIS_LOOP_162_23 |              |           | 0    | 0    |        |        |                |      |         |                  |
+|      p_ZL5fc3_w_3_U                     | rom_1p       |           |      |      | N      |        | p_ZL5fc3_w_3   | auto | 1       | 8, 32, 1         |
++-----------------------------------------+--------------+-----------+------+------+--------+--------+----------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Ignored Pragmas
++-----------------+------------------------------------------------------+--------------------------------------------------------------------------+-----------------+
+| Type            | Options                                              | Location                                                                 | Messages        |
++-----------------+------------------------------------------------------+--------------------------------------------------------------------------+-----------------+
+| INLINE          |                                                      | in lif_update (../../SNN_guest_lecture/code/snn_mlp.cpp:34)              | Not implemented |
+| INLINE          | off                                                  | in read_features_from_bram (../../SNN_guest_lecture/code/snn_mlp.cpp:57) | Not implemented |
+| INLINE          | off                                                  | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:77)                 | Not implemented |
+| ARRAY_PARTITION | variable=fc1_w cyclic factor=FC1_NEURON_UNROLL dim=1 | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:79)                 | Not implemented |
+| ARRAY_PARTITION | variable=fc1_w cyclic factor=2 dim=2                 | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:80)                 | Not implemented |
+| ARRAY_PARTITION | variable=fc1_b cyclic factor=FC1_NEURON_UNROLL dim=1 | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:81)                 | Not implemented |
+| ARRAY_PARTITION | variable=x cyclic factor=2 dim=1                     | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:83)                 | Not implemented |
+| ARRAY_PARTITION | variable=mem1 cyclic factor=FC1_NEURON_UNROLL dim=1  | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:84)                 | Not implemented |
+| ARRAY_PARTITION | variable=spk1 cyclic factor=FC1_NEURON_UNROLL dim=1  | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:85)                 | Not implemented |
+| UNROLL          | factor=FC1_NEURON_UNROLL                             | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:88)                 | Not implemented |
+| INLINE          | off                                                  | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:116)                | Not implemented |
+| ARRAY_PARTITION | variable=fc2_w cyclic factor=FC2_NEURON_UNROLL dim=1 | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:118)                | Not implemented |
+| ARRAY_PARTITION | variable=fc2_b cyclic factor=FC2_NEURON_UNROLL dim=1 | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:119)                | Not implemented |
+| ARRAY_PARTITION | variable=mem2 cyclic factor=FC2_NEURON_UNROLL dim=1  | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:121)                | Not implemented |
+| ARRAY_PARTITION | variable=spk2 cyclic factor=FC2_NEURON_UNROLL dim=1  | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:122)                | Not implemented |
+| ARRAY_PARTITION | variable=spk1 cyclic factor=FC1_NEURON_UNROLL dim=1  | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:123)                | Not implemented |
+| UNROLL          | factor=FC2_NEURON_UNROLL                             | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:126)                | Not implemented |
+| INLINE          | off                                                  | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:150)                | Not implemented |
+| ARRAY_PARTITION | variable=fc3_w complete dim=1                        | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:152)                | Not implemented |
+| ARRAY_PARTITION | variable=fc3_b complete dim=1                        | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:153)                | Not implemented |
+| ARRAY_PARTITION | variable=spk3 complete dim=1                         | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:154)                | Not implemented |
+| ARRAY_PARTITION | variable=mem3 complete dim=1                         | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:155)                | Not implemented |
+| UNROLL          | factor=FC3_OUT_UNROLL                                | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:158)                | Not implemented |
+| INLINE          |                                                      | in argmax_logits (../../SNN_guest_lecture/code/snn_mlp.cpp:178)          | Not implemented |
+| UNROLL          |                                                      | in argmax_logits (../../SNN_guest_lecture/code/snn_mlp.cpp:184)          | Not implemented |
+| INLINE          | off                                                  | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:203)               | Not implemented |
+| ARRAY_PARTITION | variable=mem1 cyclic factor=FC1_NEURON_UNROLL dim=1  | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:215)               | Not implemented |
+| ARRAY_PARTITION | variable=mem2 cyclic factor=FC2_NEURON_UNROLL dim=1  | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:216)               | Not implemented |
+| ARRAY_PARTITION | variable=mem3 complete dim=1                         | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:217)               | Not implemented |
+| ARRAY_PARTITION | variable=spk1 cyclic factor=FC1_NEURON_UNROLL dim=1  | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:219)               | Not implemented |
+| ARRAY_PARTITION | variable=spk2 cyclic factor=FC2_NEURON_UNROLL dim=1  | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:220)               | Not implemented |
+| ARRAY_PARTITION | variable=spk3 complete dim=1                         | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:221)               | Not implemented |
+| ARRAY_PARTITION | variable=logits_sum complete dim=1                   | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:223)               | Not implemented |
+| UNROLL          |                                                      | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:238)               | Not implemented |
+| UNROLL          |                                                      | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:250)               | Not implemented |
+| UNROLL          |                                                      | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:256)               | Not implemented |
+| ARRAY_PARTITION | variable=features complete dim=1                     | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:283)                | Not implemented |
+| ARRAY_PARTITION | variable=local_logits complete dim=1                 | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:288)                | Not implemented |
+| UNROLL          |                                                      | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:295)                | Not implemented |
++-----------------+------------------------------------------------------+--------------------------------------------------------------------------+-----------------+
+
+* Implemented Pragmas
++-----------------+-------------------------------------------+-------------------------------------------------------------------------------+
+| Type            | Options                                   | Location                                                                      |
++-----------------+-------------------------------------------+-------------------------------------------------------------------------------+
+| INLINE          |                                           | in _zl10lif_update6ap_intili32eers0_ (SNN_guest_lecture/code/snn_mlp.cpp:34)  |
+| INLINE          | off                                       | in read_features_from_bram (SNN_guest_lecture/code/snn_mlp.cpp:57)            |
+| INLINE          | off                                       | in fc1_lif (SNN_guest_lecture/code/snn_mlp.cpp:77)                            |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=fc1_w | in fc1_lif (SNN_guest_lecture/code/snn_mlp.cpp:79)                            |
+| ARRAY_PARTITION | dim=2 type=cyclic factor=2 variable=fc1_w | in fc1_lif (SNN_guest_lecture/code/snn_mlp.cpp:80)                            |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=fc1_b | in fc1_lif (SNN_guest_lecture/code/snn_mlp.cpp:81)                            |
+| UNROLL          | factor=4                                  | in fc1_lif (SNN_guest_lecture/code/snn_mlp.cpp:88)                            |
+| INLINE          | off                                       | in fc2_lif (SNN_guest_lecture/code/snn_mlp.cpp:116)                           |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=fc2_w | in fc2_lif (SNN_guest_lecture/code/snn_mlp.cpp:118)                           |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=fc2_b | in fc2_lif (SNN_guest_lecture/code/snn_mlp.cpp:119)                           |
+| UNROLL          | factor=4                                  | in fc2_lif (SNN_guest_lecture/code/snn_mlp.cpp:126)                           |
+| INLINE          | off                                       | in fc3_lif (SNN_guest_lecture/code/snn_mlp.cpp:150)                           |
+| ARRAY_PARTITION | dim=1 type=complete variable=fc3_w        | in fc3_lif (SNN_guest_lecture/code/snn_mlp.cpp:152)                           |
+| UNROLL          |                                           | in fc3_lif (SNN_guest_lecture/code/snn_mlp.cpp:158)                           |
+| INLINE          |                                           | in _zl13argmax_logitsp6ap_intili32ee (SNN_guest_lecture/code/snn_mlp.cpp:178) |
+| UNROLL          |                                           | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:184)                          |
+| INLINE          | off                                       | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:203)                          |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=mem1  | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:215)                          |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=mem2  | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:216)                          |
+| ARRAY_PARTITION | dim=1 type=complete variable=mem3         | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:217)                          |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=spk1  | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:219)                          |
+| ARRAY_PARTITION | dim=1 type=cyclic factor=4 variable=spk2  | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:220)                          |
+| ARRAY_PARTITION | dim=1 type=complete variable=spk3         | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:221)                          |
+| UNROLL          |                                           | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:238)                          |
+| UNROLL          |                                           | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:250)                          |
+| UNROLL          |                                           | in snn_core (SNN_guest_lecture/code/snn_mlp.cpp:256)                          |
+| ARRAY_PARTITION | dim=1 type=complete variable=features     | in snn_mlp (SNN_guest_lecture/code/snn_mlp.cpp:283)                           |
+| ARRAY_PARTITION | dim=1 type=complete variable=local_logits | in snn_mlp (SNN_guest_lecture/code/snn_mlp.cpp:288)                           |
+| UNROLL          |                                           | in snn_mlp (SNN_guest_lecture/code/snn_mlp.cpp:295)                           |
++-----------------+-------------------------------------------+-------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++--------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| Type         | Options                                                   | Location                                                                 |
++--------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+| PIPELINE     | ii=1                                                      | in read_features_from_bram (../../SNN_guest_lecture/code/snn_mlp.cpp:60) |
+| PIPELINE     | ii=1                                                      | in fc1_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:93)                 |
+| PIPELINE     | ii=1                                                      | in fc2_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:131)                |
+| PIPELINE     | ii=1                                                      | in fc3_lif (../../SNN_guest_lecture/code/snn_mlp.cpp:163)                |
+| PIPELINE     | ii=1                                                      | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:226)               |
+| PIPELINE     | ii=1                                                      | in snn_core (../../SNN_guest_lecture/code/snn_mlp.cpp:232)               |
+| INTERFACE    | m_axi port=feature_mem offset=slave bundle=gmem depth=384 | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:274)                |
+| INTERFACE    | s_axilite port=feature_mem bundle=CTRL                    | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:275)                |
+| INTERFACE    | s_axilite port=prediction bundle=CTRL                     | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:276)                |
+| INTERFACE    | s_axilite port=logits_out bundle=CTRL                     | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:277)                |
+| INTERFACE    | s_axilite port=return bundle=CTRL                         | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:278)                |
+| BIND_STORAGE | variable=features type=ram_2p impl=bram                   | in snn_mlp (../../SNN_guest_lecture/code/snn_mlp.cpp:282)                |
++--------------+-----------------------------------------------------------+--------------------------------------------------------------------------+
+
+

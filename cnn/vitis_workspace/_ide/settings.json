@@ -1,0 +1,9 @@
+{
+    "clangd.fallbackFlags": [
+        "-I/tools/2026.1/Vitis/include",
+        "-I/tools/2026.1/Vitis/include/etc",
+        "-I/tools/2026.1/Vitis/lnx64/tools/auto_cc/include",
+        "-I/home/kuba/vitis_workspace/hls_component",
+        "-I/home/kuba/cnn_env/project/CNN_guest_lecture/code"
+    ]
+}

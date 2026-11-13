@@ -1,0 +1,246 @@
+<ENTRY>
+{
+ "thisFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/snn_mlp.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Nov  3 17:18:36 2026",
+ "timestampMillis": "1793722716388",
+ "buildStep": {
+  "cmdId": "b56829fd-a778-477e-a07b-d4a3770a1d66",
+  "name": "v++",
+  "logFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/logs/snn_mlp.steps.log",
+  "commandLine": "/tools/2026.1/Vitis/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/hls_config.cfg --work_dir snn_mlp ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/hls_config.cfg",
+   "--work_dir",
+   "snn_mlp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/hls_config.cfg",
+    "content": "part=xc7z020clg400-1\n\n[hls]\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.top=snn_mlp\nsyn.file=/home/kuba/snn_env/SNN_guest_lecture/code/fpga_weights.h\nsyn.file=/home/kuba/snn_env/SNN_guest_lecture/code/snn_mlp.cpp\ntb.file=/home/kuba/snn_env/SNN_guest_lecture/code/snn_mlp_tb.cpp\nclock=10ns\ncsim.clean=1"
+   }
+  ],
+  "cwd": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:18:36 2026",
+ "timestampMillis": "1793722716388",
+ "status": {
+  "cmdId": "b56829fd-a778-477e-a07b-d4a3770a1d66",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719898",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "snn_mlp",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/kuba/snn_env/SNN_guest_lecture/code/fpga_weights.h",
+     "/home/kuba/snn_env/SNN_guest_lecture/code/snn_mlp.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719899",
+ "buildStep": {
+  "cmdId": "55397b7a-93cc-47a0-bece-38dbf9295362",
+  "name": "",
+  "logFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719899",
+ "status": {
+  "cmdId": "55397b7a-93cc-47a0-bece-38dbf9295362",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719899",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719900",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:18:39 2026",
+ "timestampMillis": "1793722719900",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740289",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740290",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740290",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740290",
+ "status": {
+  "cmdId": "55397b7a-93cc-47a0-bece-38dbf9295362",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740445",
+ "status": {
+  "cmdId": "b56829fd-a778-477e-a07b-d4a3770a1d66",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740460",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/reports/v++_compile_snn_mlp_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:19:00 2026",
+ "timestampMillis": "1793722740461",
+ "report": {
+  "path": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/reports/.db/v++_compile_snn_mlp_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

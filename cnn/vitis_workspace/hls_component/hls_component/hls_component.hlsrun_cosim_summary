@@ -1,0 +1,228 @@
+<ENTRY>
+{
+ "thisFile": "/home/kuba/vitis_workspace/hls_component/hls_component/hls_component.hlsrun_cosim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Oct 20 18:17:55 2026",
+ "timestampMillis": "1792513075394",
+ "buildStep": {
+  "cmdId": "7463d49e-7ca4-4032-bdb5-6fef4def6c0a",
+  "name": "vitis-run",
+  "logFile": "/home/kuba/vitis_workspace/hls_component/hls_component/logs/hls_component.steps.log",
+  "commandLine": "/tools/2026.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --cosim --config /home/kuba/vitis_workspace/hls_component/hls_config.cfg --work_dir hls_component ",
+  "args": [
+   "--mode",
+   "hls",
+   "--cosim",
+   "--config",
+   "/home/kuba/vitis_workspace/hls_component/hls_config.cfg",
+   "--work_dir",
+   "hls_component"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/kuba/vitis_workspace/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Oct 20 18:17:55 2026",
+ "timestampMillis": "1792513075394",
+ "status": {
+  "cmdId": "7463d49e-7ca4-4032-bdb5-6fef4def6c0a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077672",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_RTL_COSIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "ds_cnn",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn.cpp",
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn_weights.h",
+     "/home/kuba/cnn_env/project/CNN_guest_lecture/code/ds_cnn_weights_data.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "buildStep": {
+  "cmdId": "5ebf7806-ab1f-4824-be27-3993e9661562",
+  "name": "",
+  "logFile": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/kuba/vitis_workspace/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "status": {
+  "cmdId": "5ebf7806-ab1f-4824-be27-3993e9661562",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls/sim/report/ds_cnn_cosim.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_COSIMULATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH_COSIM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_TIMELINE_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:17:57 2026",
+ "timestampMillis": "1792513077673",
+ "report": {
+  "path": "/home/kuba/vitis_workspace/hls_component/hls_component/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_WAVE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Oct 20 18:18:01 2026",
+ "timestampMillis": "1792513081428",
+ "status": {
+  "cmdId": "5ebf7806-ab1f-4824-be27-3993e9661562",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Oct 20 18:18:01 2026",
+ "timestampMillis": "1792513081481",
+ "status": {
+  "cmdId": "7463d49e-7ca4-4032-bdb5-6fef4def6c0a",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:18:01 2026",
+ "timestampMillis": "1792513081481",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Oct 20 18:18:01 2026",
+ "timestampMillis": "1792513081481",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

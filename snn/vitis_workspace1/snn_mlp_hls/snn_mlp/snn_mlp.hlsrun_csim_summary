@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/snn_mlp.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Nov  3 17:17:13 2026",
+ "timestampMillis": "1793722633009",
+ "buildStep": {
+  "cmdId": "3aabf5d0-139d-4718-9eb8-64fc9ed26c99",
+  "name": "vitis-run",
+  "logFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/logs/snn_mlp.steps.log",
+  "commandLine": "/tools/2026.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/hls_config.cfg --work_dir snn_mlp ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/hls_config.cfg",
+   "--work_dir",
+   "snn_mlp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:17:13 2026",
+ "timestampMillis": "1793722633010",
+ "status": {
+  "cmdId": "3aabf5d0-139d-4718-9eb8-64fc9ed26c99",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Nov  3 17:17:16 2026",
+ "timestampMillis": "1793722636469",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "snn_mlp",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/kuba/snn_env/SNN_guest_lecture/code/fpga_weights.h",
+     "/home/kuba/snn_env/SNN_guest_lecture/code/snn_mlp.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2026.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Nov  3 17:17:16 2026",
+ "timestampMillis": "1793722636470",
+ "buildStep": {
+  "cmdId": "7dfe00a9-1cf9-4334-a5b6-29a438b585d3",
+  "name": "",
+  "logFile": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls/snn_mlp/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/kuba/snn_env/vitis_workspace1/snn_mlp_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:17:16 2026",
+ "timestampMillis": "1793722636470",
+ "status": {
+  "cmdId": "7dfe00a9-1cf9-4334-a5b6-29a438b585d3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:17:19 2026",
+ "timestampMillis": "1793722639819",
+ "status": {
+  "cmdId": "7dfe00a9-1cf9-4334-a5b6-29a438b585d3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Nov  3 17:17:19 2026",
+ "timestampMillis": "1793722639937",
+ "status": {
+  "cmdId": "3aabf5d0-139d-4718-9eb8-64fc9ed26c99",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:17:19 2026",
+ "timestampMillis": "1793722639938",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Nov  3 17:17:19 2026",
+ "timestampMillis": "1793722639938",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
