@@ -1,0 +1,4 @@
+domain_path: /home/kuba/Desktop/emb_sys2/assignment2/platform/export/platform/sw/standalone_ps7_cortexa9_0
+app_src_dir: /tools/2026.1/Vitis/data/embeddedsw/lib/sw_apps/hello_world
+template: hello_world
+lang: c
