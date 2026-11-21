@@ -1,0 +1,43 @@
+{
+  "model": "snn",
+  "total": 800,
+  "correct": 629,
+  "accuracy_percent": 78.625,
+  "switch_us": 33119,
+  "mean_inference_us": 156,
+  "min_inference_us": 156,
+  "max_inference_us": 156,
+  "confusion_matrix": [
+    [
+      156,
+      0,
+      20,
+      24
+    ],
+    [
+      1,
+      184,
+      1,
+      14
+    ],
+    [
+      32,
+      0,
+      117,
+      51
+    ],
+    [
+      6,
+      0,
+      22,
+      172
+    ]
+  ],
+  "classes": [
+    "Circle",
+    "Figure_Eight",
+    "Square",
+    "Triangle"
+  ],
+  "logits": "raw integers in classes order; scales differ between models"
+}
