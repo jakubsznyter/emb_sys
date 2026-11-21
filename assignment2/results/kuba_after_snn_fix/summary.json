@@ -1,0 +1,88 @@
+[
+  {
+    "model": "cnn",
+    "total": 800,
+    "correct": 367,
+    "accuracy_percent": 45.875,
+    "switch_us": 33145,
+    "mean_inference_us": 1041.2075,
+    "min_inference_us": 1041,
+    "max_inference_us": 1042,
+    "confusion_matrix": [
+      [
+        73,
+        37,
+        75,
+        15
+      ],
+      [
+        75,
+        38,
+        79,
+        8
+      ],
+      [
+        57,
+        49,
+        81,
+        13
+      ],
+      [
+        0,
+        11,
+        14,
+        175
+      ]
+    ],
+    "classes": [
+      "Circle",
+      "Square",
+      "Triangle",
+      "Figure_Eight"
+    ],
+    "logits": "raw integers in classes order; scales differ between models"
+  },
+  {
+    "model": "snn",
+    "total": 800,
+    "correct": 629,
+    "accuracy_percent": 78.625,
+    "switch_us": 33115,
+    "mean_inference_us": 156,
+    "min_inference_us": 156,
+    "max_inference_us": 156,
+    "confusion_matrix": [
+      [
+        156,
+        0,
+        20,
+        24
+      ],
+      [
+        1,
+        184,
+        1,
+        14
+      ],
+      [
+        32,
+        0,
+        117,
+        51
+      ],
+      [
+        6,
+        0,
+        22,
+        172
+      ]
+    ],
+    "classes": [
+      "Circle",
+      "Figure_Eight",
+      "Square",
+      "Triangle"
+    ],
+    "logits": "raw integers in classes order; scales differ between models"
+  }
+]
